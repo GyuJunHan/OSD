@@ -1,0 +1,61 @@
+package test;
+import java.util.Scanner;
+
+public class Multiply {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		String Select[] = {"가위", "바위", "보"};
+		String User, Computer;
+		int RandomNumber;
+		System.out.println("컴퓨터와 가위 바위 보 게임을 합니다.");
+		while(true) {
+			System.out.print("가위 바위 보!>>");
+			User = scanner.next();
+			if(User.equals("그만")) break;
+			
+			RandomNumber = (int)(Math.random()*3);
+			Computer = Select[RandomNumber];
+			
+			if(User.equals("가위") && Computer.equals("가위")) {
+				System.out.println("사용자 = "+User+" , 컴퓨터= "+Computer+", 비겼습니다.");
+				continue;
+			}
+			if(User.equals("가위") && Computer.equals("바위")) {
+				System.out.println("사용자 = "+User+" , 컴퓨터= "+Computer+", 컴퓨터가 이겼습니다.");
+				continue;
+			}
+			if(User.equals("가위") && Computer.equals("보")) {
+				System.out.println("사용자 = "+User+" , 컴퓨터= "+Computer+", 사용자가 이겼습니다.");
+				continue;
+			}
+			
+			if(User.equals("바위") && Computer.equals("가위")) {
+				System.out.println("사용자 = "+User+" , 컴퓨터= "+Computer+", 사용자가 이겼습니다.");
+				continue;
+			}
+			if(User.equals("바위") && Computer.equals("바위")) {
+				System.out.println("사용자 = "+User+" , 컴퓨터= "+Computer+", 비겼습니다.");
+				continue;
+			}
+			if(User.equals("바위") && Computer.equals("보")) {
+				System.out.println("사용자 = "+User+" , 컴퓨터= "+Computer+", 컴퓨터가 이겼습니다.");
+				continue;
+			}
+			
+			if(User.equals("보") && Computer.equals("가위")) {
+				System.out.println("사용자 = "+User+" , 컴퓨터= "+Computer+", 컴퓨터가 이겼습니다.");
+				continue;
+			}
+			if(User.equals("보") && Computer.equals("바위")) {
+				System.out.println("사용자 = "+User+" , 컴퓨터= "+Computer+", 사용자가 이겼습니다.");
+				continue;
+			}
+			if(User.equals("보") && Computer.equals("보")) {
+				System.out.println("사용자 = "+User+" , 컴퓨터= "+Computer+", 비겼습니다.");
+				continue;
+			}
+		}
+		System.out.println("게임을 종료합니다...");
+		scanner.close();
+	}
+}

@@ -21,7 +21,7 @@ class ColorPoint extends Point{
 	}
 }
 
-public class point{
+public class OSD{
 	public static void main(String [] args) {
 		Point p = new Point();
 		p.set(1,2);

@@ -1,0 +1,55 @@
+package test;
+import java.util.Scanner;
+
+class Person { 
+	String name;
+	}
+
+public class OSD{
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		Person person1 = new Person();
+		Person person2 = new Person();
+		
+		int Random_Number[] = new int[3];
+		int stage = 1;
+		int player = 0;
+		
+		System.out.print("1번째 선수 이름>>");
+		person1.name = scanner.nextLine();
+		System.out.print("1번째 선수 이름>>");
+		person2.name = scanner.nextLine();
+		
+		while(true) {
+			player = stage % 2;
+			if(player == 1) {
+				System.out.print("[" + person1.name + "]:<Enter>");
+			}else if(player == 2) {
+				System.out.print("[" + person2.name + "]:<Enter>");
+			}
+			String check = scanner.nextLine();
+			
+			if(check.isEmpty()) {
+				System.out.print("       ");
+				for(int i = 0; i < 3; i++) {
+					Random_Number[i] = (int)(Math.random()*3 + 1);
+					System.out.print(Random_Number[i] + "   ");
+				}
+			}
+			
+			if((Random_Number[0] == Random_Number[1]) && (Random_Number[1] == Random_Number[2])) {
+				if(player == 1) {
+					System.out.println(person1.name + "님이 이겼습니다!");
+					break;
+				}else if(player == 2) {
+					System.out.println(person2.name + "님이 이겼습니다!");
+					break;
+				}
+			}else {
+				System.out.println("아쉽군요!");
+			}
+		}
+		
+	}
+}
